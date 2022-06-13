@@ -12,4 +12,5 @@ Open geometry dash.
 Be aware that a longer mp4 file or a mp4 file with big resolution will result in the program to take more time to execute.
 
 The python doesn't try to check if two consecutives frame have pixel of the same color at the same place.
-In order to optimise the number of object in the editor, each frame have been compress by checking if two or more pixel can appear with a single object. 
+In order to optimise the number of object in the editor, each frame have been compress by checking if two or more pixel can appear with a single object.
+Even with that, long video with big resolution can cause lag in the game. 
