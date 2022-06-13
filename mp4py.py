@@ -69,7 +69,7 @@ def png2info(fcg,img):
     for i in range(img.size[1]):
         obj_color.append([])
         for j in range(img.size[0]):
-            hsv=[round(img.getpixel((j,i))[0]*360/255),round(img.getpixel((j,i))[1]/255,2),round(img.getpixel((j,i))[2]/255-1)]
+            hsv=[round(img.getpixel((j,i))[0]*360/255),round(img.getpixel((j,i))[1]/255,2),round(img.getpixel((j,i))[2]/255-1,2)]
             if hsv in l:
                 obj_color[i].append(hsvgc[l.index(hsv)][0])
                 nb[hsvgc[l.index(hsv)][0]]+=1
