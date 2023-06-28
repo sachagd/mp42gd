@@ -2,7 +2,7 @@ Put in the video folder, the video you want (it doesn't need to have a specific 
 Open the python file (mp4py.py) and execute it.
 During the execution, you can see the progression of the program in the console.  
 Be careful, any file in the image folder is going to be delete.
-It allow us to have only the frame of the video you are working with.
+It allow us to only have the frame of the video you are working with.
 Indeed, it is here that every frame of the video are save.
 Normally, after the python has been executed, new data has been write in info.json file
 Open the spwn file (mp4.spwn) and execute it.
