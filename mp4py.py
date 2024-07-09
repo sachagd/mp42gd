@@ -25,19 +25,19 @@ vidcap = cv2.VideoCapture(".\\video\\"+listdir(".\\video")[0]) #Open the video
 success,image = vidcap.read()
 count = 0
 while success:
-    image=compress(image,96,54,(0,0),(1920,1080)) #Use compress function explain earlier
+    image=compress(image,96,54,(0,0),(1920,1080)) #Use compress function explained earlier
     cv2.imwrite(".\\img\\%d.png" % count, image) #Save the image in the img folder
     success,image = vidcap.read() #Read the next frame
     count += 1
 
-def mp42info(): #Each frame is open, convert into hsv (it is rgb at first) and go to png2info function
+def mp42info(): #Each frame is opened, converted into hsv (it is rgb at first) and goes to png2info function
     info=[]
     for i in range(len(listdir(".\\img"))):
         print(str(i)+"/"+str(len(listdir(".\\img"))))
         img=Image.open(".\\img\\%d.png"%i)
         img=img.convert('HSV')
         info.append(png2info(1,img))
-    for i in range(len(info)): #Reduce the amount of data in info.json. Can be remove to slightly accelerate the program
+    for i in range(len(info)): #Reduce the amount of data in info.json. Can be removed to slightly accelerate the program
         j=0
         while j+1<len(info[i][0]):
             if len(info[i][0][j])==len(info[i][0][j+1])==1:
@@ -48,7 +48,7 @@ def mp42info(): #Each frame is open, convert into hsv (it is rgb at first) and g
                     j+=1
             else:
                 j+=1
-    n=0 #Count the number of object that will be create with the spwn file. Mostly to check if the spwn program work properly. Can be remove to slightly accelerate the program
+    n=0 #Count the number of object that will be created with the spwn file. Mostly to check if the spwn program works properly. Can be removed to slightly accelerate the program
     for i in range(len(info)):
         for j in range(len(info[i][0])):
             if type(info[i][0][j])==list:
@@ -137,7 +137,7 @@ def png2info(fcg,img):
     nb=[i[1] for i in nb]
     for i in hsvgc:
         gc2hsv[i[0]]=i[1]+[nb.index(i[0])]
-    for i in range(len(obj_color)): #Reduce the amount of data in info.json. Can be remove to slightly accelerate the program
+    for i in range(len(obj_color)): #Reduce the amount of data in info.json. Can be removed to slightly accelerate the program
         j=0
         while j+1<len(obj_color[i]):
             if type(obj_color[i][j])==int and obj_color[i][j+1]==1:
